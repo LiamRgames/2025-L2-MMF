@@ -1,5 +1,6 @@
 #Definitions/Imports
 import pandas
+import random
 response = ''
 EXIT_CODE = "xxx"
 
@@ -138,11 +139,6 @@ while tickets_sold < MAX_TICKETS:
     surcharges.append(surcharge)
     tickets_sold += 1
 
-if tickets_sold == MAX_TICKETS:
-    print(f"All {MAX_TICKETS} have been sold")
-else:
-    print(f"{tickets_sold} / {MAX_TICKETS} have been sold")
-
 frame = pandas.DataFrame(dictionary)
 frame["Total"] = frame["Ticket Price"] + frame["Surcharge"]
 frame["Profit"] = frame["Ticket Price"] - 5.00
@@ -155,3 +151,15 @@ print(frame.to_string(index=False))
 print()
 print(f"Total Cost: ${total_cost:.2f}")
 print(f"Total Profit: ${total_profit:.2f}")
+print()
+winner = random.choice(names)
+winner_index = names.index(winner)
+winner_ticket_cost = ticket_costs[winner_index]
+winner_surcharge =  surcharges[winner_index]
+winner_total_amount = frame.at[winner_index, "Total"]
+print(f"Winner: {winner}, list pos {winner_index}, they won a {winner_total_amount} ticket for free")
+
+if tickets_sold == MAX_TICKETS:
+    print(f"All {MAX_TICKETS} have been sold")
+else:
+    print(f"{tickets_sold} / {MAX_TICKETS} have been sold")
