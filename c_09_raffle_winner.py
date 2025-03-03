@@ -2,7 +2,7 @@ import pandas
 import random
 
 names = ["John","Bob","Jeff","Hillary","Colin"]
-ages = [10, 16, 45, 64, 65]
+ages = [12, 16, 45, 64, 65]
 ticket_costs = [6.50,7.50,10.50,10.50,6.50]
 surcharges = [0, 0.38, 0, 0.53, 0.33]
 dictionary = {
@@ -24,6 +24,12 @@ winner_index = names.index(winner)
 winner_ticket_cost = ticket_costs[winner_index]
 winner_surcharge =  surcharges[winner_index]
 winner_total_amount = frame.at[winner_index, "Total"]
-print(f"Winner: {winner}, list pos {winner_index}, they won a ${winner_total_amount:.2f} ticket for free")
+profit_won = frame.at[winner_index, "Profit"]
+ticket_won = ticket_costs[winner_index]
 print(f"Total Cost: {total_cost:.2f}")
 print(f"Total Profit: {total_profit:.2f}")
+print()
+print(f"Winner: {winner}, list pos {winner_index}, they won a ${winner_total_amount:.2f} ticket for free")
+print(f"Total Cost is now: ${(total_cost - ticket_won):.2f}")
+print(f"Total Profit is now: ${total_profit - profit_won:.2f}")
+print()
