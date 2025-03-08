@@ -1,0 +1,24 @@
+=== Movie Fundraiser ===
+
+
+--- Ticket Details ---
+Name  Age Ticket Price Surcharge  Total Profit
+  rg   54       $10.50     $0.53 $11.03  $5.50
+   B   20       $10.50     $0.53 $11.03  $5.50
+
+
+--- Totals ---
+Total Cost: $22.05
+Total Profit: $11.00
+
+
+--- Raffle Winner ---
+Winner: rg, list pos 0, they won a $11.03 ticket for free
+
+
+--- Adjusted Totals ---
+Total Cost is now: $11.55
+Total Profit is now: $5.50
+
+
+2 / 5 have been sold
